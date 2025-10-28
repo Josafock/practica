@@ -7,7 +7,7 @@ import { toast } from "sonner";
 export default function MfaLogin() {
   const [code, setCode] = useState("");
   const navigate = useNavigate();
-  const { user, token } = useAuth();
+  const { user } = useAuth();
 
   const [params] = useSearchParams();
   const challengeId = params.get("challengeId")!;

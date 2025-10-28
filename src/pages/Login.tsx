@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useAuth } from "../auth/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
-import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
-  const { login, loginWithGoogle } = useAuth();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -25,17 +23,6 @@ export default function Login() {
     } catch {
       alert("Credenciales inválidas");
     }
-  };
-  
-
-  const handleGoogleSuccess = (credentialResponse: any) => {
-    if (credentialResponse.credential) {
-      loginWithGoogle(credentialResponse.credential);
-    }
-  };
-
-  const handleGoogleError = () => {
-    toast.error("Error al iniciar sesión con Google");
   };
 
   return (
