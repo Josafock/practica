@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api";
+const API = "https://backend-modulo-autenticacion-practica.onrender.com/api";
 
 export const startMfaSetup = async (method: "TOTP" | "EMAIL" | "SMS", token: string) => {
   const res = await fetch(`${API}/mfa/setup`, {

@@ -1,6 +1,6 @@
 import type { User } from "../types/types";
 
-const API = "http://localhost:5000/api";
+const API = "https://backend-modulo-autenticacion-practica.onrender.com/api";
 
 // Registro
 export const register = async (data: {
